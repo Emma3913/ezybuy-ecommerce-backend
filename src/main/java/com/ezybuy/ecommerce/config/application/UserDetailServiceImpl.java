@@ -11,19 +11,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.ezybuy.ecommerce.user.infrastructure.entity.UserEntity;
-import com.ezybuy.ecommerce.user.infrastructure.repository.MySqlUserRepository;
+import com.ezybuy.ecommerce.user.infrastructure.repository.UserRepositoryImpl;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class UserDetailServiceImpl implements UserDetailsService {
-    private MySqlUserRepository mySqlUserRepository;
+    private final UserRepositoryImpl userRepositoryImpl;
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        UserEntity userEntity = mySqlUserRepository.findUserEntityByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("El usuario " + username + " no existe."));
+        UserEntity userEntity = userRepositoryImpl.findUserEntityByUsername(username);
+                // .orElseThrow(() -> new UsernameNotFoundException("El usuario " + username + " no existe."));
 
         List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
 

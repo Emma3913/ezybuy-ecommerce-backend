@@ -3,6 +3,8 @@ package com.ezybuy.ecommerce.user.infrastructure.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.ezybuy.ecommerce.user.domain.Role;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +39,7 @@ public class RoleEntity {
 
     @Column(name = "role_name")
     @Enumerated(EnumType.STRING)
-    private RoleEnum roleEnum;
+    private Role roleEnum;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "role_permissions", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
