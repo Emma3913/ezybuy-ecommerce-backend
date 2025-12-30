@@ -1,4 +1,4 @@
-package com.ezybuy.ecommerce.user.infrastructure.entity;
+package com.ezybuy.ecommerce.user.infrastructure.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

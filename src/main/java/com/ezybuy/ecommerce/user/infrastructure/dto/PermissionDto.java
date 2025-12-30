@@ -3,13 +3,9 @@ package com.ezybuy.ecommerce.user.infrastructure.dto;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Set;
-
 @Data
 @Builder
-public class UserDto {
+public class PermissionDto {
     private Long id;
-    private String username;
-    private Set<RoleDto> roles;
+    private String name;
 }
-    

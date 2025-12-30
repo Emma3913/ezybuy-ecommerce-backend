@@ -1,4 +1,4 @@
-package com.ezybuy.ecommerce.user.infrastructure.entity;
+package com.ezybuy.ecommerce.user.infrastructure.persistence.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -39,23 +39,18 @@ public class UserEntity {
     private String password;
 
     @Column(name = "is_enabled")
-    private boolean isEnabled;
+    private Boolean isEnabled;
 
     @Column(name = "account_No_Expired")
-    private boolean accountNoExpired;
+    private Boolean accountNoExpired;
 
     @Column(name = "account_No_Locked")
-    private boolean accountNoLocked;
+    private Boolean accountNoLocked;
 
     @Column(name = "credential_No_Expired")
-    private boolean credentialNoExpired;
+    private Boolean credentialNoExpired;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleEntity> roles = new HashSet<>();
-
-    public UserEntity orElseThrow(Object object) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'orElseThrow'");
-    }
 }

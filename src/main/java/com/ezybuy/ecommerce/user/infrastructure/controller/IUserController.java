@@ -1,8 +1,8 @@
-package com.ezybuy.ecommerce.user.infrastructure;
+package com.ezybuy.ecommerce.user.infrastructure.controller;
 
 import org.springframework.http.ResponseEntity;
 
-import com.ezybuy.ecommerce.user.domain.User;
+import com.ezybuy.ecommerce.user.domain.model.User;
 import com.ezybuy.ecommerce.user.infrastructure.dto.UserDto;
 
 public interface IUserController {
