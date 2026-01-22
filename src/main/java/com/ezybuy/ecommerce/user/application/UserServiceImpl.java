@@ -10,9 +10,6 @@ import com.ezybuy.ecommerce.user.domain.model.RoleEnum;
 import com.ezybuy.ecommerce.user.domain.model.User;
 import com.ezybuy.ecommerce.user.domain.service.IUserService;
 import com.ezybuy.ecommerce.user.infrastructure.mapper.UserMapper;
-import com.ezybuy.ecommerce.user.infrastructure.persistence.entity.PermissionEntity;
-import com.ezybuy.ecommerce.user.infrastructure.persistence.entity.RoleEntity;
-import com.ezybuy.ecommerce.user.infrastructure.persistence.entity.UserEntity;
 import com.ezybuy.ecommerce.user.infrastructure.persistence.repository.UserRepositoryImpl;
 
 import lombok.RequiredArgsConstructor;

@@ -39,10 +39,10 @@ public class UserMapper {
                 .id(entity.getId())
                 .username(entity.getUsername())
                 .password(entity.getPassword())
-                .isEnabled(entity.getIsEnabled())
-                .accountNoExpired(entity.getAccountNoExpired())
-                .accountNoLocked(entity.getAccountNoLocked())
-                .credentialNoExpired(entity.getCredentialNoExpired())
+                .isEnabled(entity.isEnabled())
+                .accountNoExpired(entity.isAccountNoExpired())
+                .accountNoLocked(entity.isAccountNoLocked())
+                .credentialNoExpired(entity.isCredentialNoExpired())
                 .roles(toRoleDomainSet(entity.getRoles()))
                 .build();
     }

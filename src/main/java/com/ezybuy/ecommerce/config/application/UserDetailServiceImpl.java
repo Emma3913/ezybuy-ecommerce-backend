@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.ezybuy.ecommerce.user.infrastructure.mapper.UserMapper;
 import com.ezybuy.ecommerce.user.infrastructure.persistence.entity.UserEntity;
@@ -16,15 +17,20 @@ import com.ezybuy.ecommerce.user.infrastructure.persistence.repository.UserRepos
 
 import lombok.RequiredArgsConstructor;
 
+@Service
 @RequiredArgsConstructor
 public class UserDetailServiceImpl implements UserDetailsService {
     private final UserRepositoryImpl userRepositoryImpl;
      private final UserMapper userMapper;
-    
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         com.ezybuy.ecommerce.user.domain.model.User user = userRepositoryImpl.findUserEntityByUsername(username);
+
+        if (user == null) {
+                System.out.println("Usuario: "+ user + " no encontrado" );
+        }
 
         UserEntity userEntity = userMapper.toEntity(user);
 
@@ -40,11 +46,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         return new User(userEntity.getUsername(),
                 userEntity.getPassword(),
-                userEntity.getIsEnabled(),
-                userEntity.getAccountNoExpired(),
-                userEntity.getCredentialNoExpired(),
-                userEntity.getAccountNoLocked(),
+                userEntity.isEnabled(),
+                userEntity.isAccountNoExpired(),
+                userEntity.isCredentialNoExpired(),
+                userEntity.isAccountNoLocked(),
                 authorityList);
     }
-    
+
 }
