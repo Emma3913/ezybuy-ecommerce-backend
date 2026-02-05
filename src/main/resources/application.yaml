@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ezybuy-ecommerce
+    name: gate-keeper
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3307/ezybuy-db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
