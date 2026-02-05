@@ -1,12 +1,7 @@
 package com.ezybuy.ecommerce.user.application;
 
-import java.util.Set;
-
 import org.springframework.stereotype.Service;
 
-import com.ezybuy.ecommerce.user.domain.model.Permission;
-import com.ezybuy.ecommerce.user.domain.model.Role;
-import com.ezybuy.ecommerce.user.domain.model.RoleEnum;
 import com.ezybuy.ecommerce.user.domain.model.User;
 import com.ezybuy.ecommerce.user.domain.service.IUserService;
 import com.ezybuy.ecommerce.user.infrastructure.mapper.UserMapper;
@@ -24,16 +19,6 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User createNewUser(User user) {
-
-        Permission createPermission = Permission.builder()
-                .name("CREATE")
-                .build();
-
-        Role userRole = Role.builder()
-                .roleEnum(RoleEnum.ADMIN)
-                .permissionList(Set.of(createPermission))
-                .build();
-
         User newUser = User.builder()
                 .username(user.getUsername())
                 .password(user.getPassword())
@@ -41,7 +26,8 @@ public class UserServiceImpl implements IUserService {
                 .accountNoLocked(true)
                 .isEnabled(true)
                 .credentialNoExpired(true)
-                .roles(Set.of(userRole))
+                // .roles(Set.of(userRole))
+                .roles(null)
                 .build();
 
         return userRepositoryImpl.save(userMapper.toEntity(newUser));

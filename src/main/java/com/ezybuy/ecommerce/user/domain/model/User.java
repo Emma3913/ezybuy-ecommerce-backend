@@ -2,11 +2,15 @@ package com.ezybuy.ecommerce.user.domain.model;
 
 import java.util.Set;
 
-import lombok.Builder;
-import lombok.Data;
+import com.ezybuy.ecommerce.role.domain.model.Role;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
 @Builder
-@Data
+@AllArgsConstructor
 public class User {
     private Long id;
     private String username;

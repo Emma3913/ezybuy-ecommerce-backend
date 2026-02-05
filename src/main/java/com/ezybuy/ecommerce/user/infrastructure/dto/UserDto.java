@@ -5,11 +5,10 @@ import lombok.Data;
 
 import java.util.Set;
 
-@Data
+import com.ezybuy.ecommerce.role.infrastructure.dto.RoleDto;
+
 @Builder
-public class UserDto {
-    private Long id;
-    private String username;
-    private Set<RoleDto> roles;
-}
+public record UserDto(Long id,
+    String username,
+    Set<RoleDto> roles) {}
     

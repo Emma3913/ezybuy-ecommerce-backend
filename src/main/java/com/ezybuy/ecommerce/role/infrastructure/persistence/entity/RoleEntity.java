@@ -1,9 +1,10 @@
-package com.ezybuy.ecommerce.user.infrastructure.persistence.entity;
+package com.ezybuy.ecommerce.role.infrastructure.persistence.entity;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import com.ezybuy.ecommerce.user.domain.model.RoleEnum;
+import com.ezybuy.ecommerce.permission.infrastructure.persistence.entity.PermissionEntity;
+import com.ezybuy.ecommerce.role.domain.model.RoleEnum;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

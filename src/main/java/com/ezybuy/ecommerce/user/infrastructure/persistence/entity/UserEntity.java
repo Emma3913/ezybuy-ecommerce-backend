@@ -3,6 +3,8 @@ package com.ezybuy.ecommerce.user.infrastructure.persistence.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.ezybuy.ecommerce.role.infrastructure.persistence.entity.RoleEntity;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

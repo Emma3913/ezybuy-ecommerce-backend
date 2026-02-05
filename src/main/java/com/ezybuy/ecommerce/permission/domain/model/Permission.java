@@ -1,4 +1,4 @@
-package com.ezybuy.ecommerce.user.domain.model;
+package com.ezybuy.ecommerce.permission.domain.model;
 
 import lombok.Builder;
 import lombok.Data;

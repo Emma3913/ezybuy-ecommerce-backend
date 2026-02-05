@@ -1,4 +1,4 @@
-package com.ezybuy.ecommerce.user.domain.model;
+package com.ezybuy.ecommerce.role.domain.model;
 
 public enum RoleEnum {
     ADMIN,

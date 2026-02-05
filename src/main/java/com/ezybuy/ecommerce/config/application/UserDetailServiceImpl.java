@@ -3,7 +3,6 @@ package com.ezybuy.ecommerce.config.application;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,6 +25,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
+        // com.ezybuy.ecommerce.user.domain.model.User user = userRepositoryImpl.findUserEntityByUsername(username);
         com.ezybuy.ecommerce.user.domain.model.User user = userRepositoryImpl.findUserEntityByUsername(username);
 
         if (user == null) {
