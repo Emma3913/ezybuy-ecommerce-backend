@@ -1,15 +1,17 @@
 spring:
   application:
     name: gate-keeper
+
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/ezybuy-db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: root
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ezybuy-db
+    username: postgres
     password: root
+
   jpa:
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
     properties:
       hibernate:
@@ -19,8 +21,12 @@ spring:
         order_inserts: true
         order_updates: true
 
-# app:
-#   secret:
-#     key: YFiWZGqMKgeadnQGmwGtDMXpFHxbHVXrZEFwxhacjyzmzxpYipAdfwqePYnuKmKdTJer
-#   jwt:
-#     expiration: 3600000
+app:
+  jwt:
+    secret: 9sd8f9sd8f9sd8f9sd8f9sd8f9sd8f9sd8f9sd8f9sd8f9sd8f9sd8f
+    expiration: 900000
+    refresh-expiration: 604800000
+
+logging:
+  level:
+    org.springframework.security: DEBUG
